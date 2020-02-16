@@ -6,7 +6,7 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  
+
   return firstName[0] + "." + lastName[0];
 };
 
@@ -14,35 +14,39 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   // check if VAT is > 0
-  if (vatRate){
+  if (vatRate) {
     // convert VAT into decimal
-    const toDecimal = vatRate / 100
+    const toDecimal = vatRate / 100;
     return Math.floor((originalPrice * toDecimal) + originalPrice);
   } else {
     return originalPrice;
-  }
-}
+  };
+};
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  
+
   // get final sale price (convert % into decimal)
-  const salePrice = originalPrice - (originalPrice * (reduction / 100))
+  const salePrice = originalPrice - (originalPrice * (reduction / 100));
 
   // parseFloat converts toFixed string back into number
-  return parseFloat(salePrice.toFixed(2))
-}
+  return parseFloat(salePrice.toFixed(2));
+};
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
   
+  // get middle index of string. Round down if floating point.
+  const middleIndex = Math.floor((str.length) / 2);
+  
   // for strings of even length
-  if(str.length % 2 === 0){
-    
-  }
-  return str[Math.floor((str.length) / 2)]
-}
+  if (str.length % 2 === 0) {
+    return str[middleIndex-1] + str[middleIndex];
+  };
+  // for strings of odd length
+  return str[middleIndex];
+};
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
