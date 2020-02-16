@@ -27,19 +27,11 @@ function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
   
-  // convert % to decimal
-  const toDecimal = reduction / 100;
-  // calculate final price
-  const salePrice = originalPrice - (originalPrice * toDecimal)
+  // get final sale price (convert % into decimal)
+  const salePrice = originalPrice - (originalPrice * (reduction / 100))
 
-  // check if salePrice is a number and not float
-  if (Number.isInteger(salePrice)){
-    return salePrice;
-  } else {
-    // toFixed seems to covert to string, so use parseFLoat to convert back to a floating point
-    return parseFloat(salePrice.toFixed(2))
-  }
-  
+  // parseFloat converts toFixed string back into number
+  return parseFloat(salePrice.toFixed(2))
 }
 
 function getMiddleCharacter(str) {
