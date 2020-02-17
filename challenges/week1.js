@@ -94,8 +94,18 @@ function getMeanScore(scores) {
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
-}
+  // location of first conditional important. Fails if placed after fizz or buzz
+  // because fizzbuzz number would pass n % 3 === 0  or n % 5 === 0 checks.
+  if (n % 3 === 0 && n % 5 === 0){
+    return 'fizzbuzz';
+  } else if (n % 3 === 0) {
+    return 'fizz';
+  } else if (n % 5 === 0){
+    return 'buzz';
+  } else {
+    return n;
+  };
+};
 
 module.exports = {
   capitalize,
