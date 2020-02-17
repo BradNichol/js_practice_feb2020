@@ -53,9 +53,9 @@ function reverseWord(word) {
   
   // split word into individual characters in array, reverse 
   //and use join to turn back to a string
-  return word.split("").reverse().join("")
+  return word.split("").reverse().join("");
 
-}
+};
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
@@ -71,8 +71,15 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
-}
+  
+  let count = 0;
+  users.forEach((u) => {
+    if (u.type === 'Linux') {
+      count++;
+    };
+  });
+  return count;
+};
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
