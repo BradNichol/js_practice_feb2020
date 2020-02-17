@@ -61,9 +61,8 @@ function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
 
   let newArray = [];
-  words.forEach(function (w){
-    const splitWords = w.split("").reverse().join("");
-    newArray.push(splitWords);
+  words.forEach((w) => {
+    newArray.push(w.split("").reverse().join(""));
   });
 
   return newArray;
