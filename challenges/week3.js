@@ -6,7 +6,16 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Your code here!
+
+  // start new array with first word from words array
+  const newArr = [words[0]]
+  for (let i = 1; i < words.length; i++) {
+    // start index at 1 to miss first word. Uppercase first letter of each word 
+    // thereafter + concat rest of word with slice. Push into new array.
+    newArr.push(words[i][0].toUpperCase() + words[i].slice(1))
+  }
+  
+  return newArr.join("")
 }
 
 function getTotalSubjects(people) {
