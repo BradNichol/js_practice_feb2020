@@ -33,7 +33,17 @@ function getTotalSubjects(people) {
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  // Your code here!
+  
+  // NOTE - initially tried forEach to loop. Failed because:
+  // 'There is no way to stop or break a forEach() loop' from MDN
+  // for loop breaks Ok so used this instead.
+
+  for (let i = 0; i < menu.length; i++) {
+    if (menu[i].ingredients.includes(ingredient)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function duplicateNumbers(arr1, arr2) {
