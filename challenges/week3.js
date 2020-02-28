@@ -49,7 +49,18 @@ function checkIngredients(menu, ingredient) {
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+  
+  const arr3 = [];
+  arr1.forEach((n1) => {
+    arr2.forEach((n2) => {
+      if (n1 === n2) {
+        arr3.push(n1)
+      }
+    })
+  })
+
+  // set can be used to return unique values only
+  return [...new Set(arr3)]
 }
 
 module.exports = {
