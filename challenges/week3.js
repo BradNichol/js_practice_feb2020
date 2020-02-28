@@ -60,7 +60,7 @@ function duplicateNumbers(arr1, arr2) {
   })
 
   // set can be used to return unique values only
-  return [...new Set(arr3)]
+  return [...new Set(arr3)].sort()
 }
 
 module.exports = {
