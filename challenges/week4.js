@@ -1,6 +1,7 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   
+  // filter is used to return an array of items that pass criteria
   return nums.filter(n => n < 1);
 }
 
