@@ -37,7 +37,9 @@ function getCities(users) {
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  // Your code here
+  
+  // parseFloat converts back to float. Math.sqrt returns the square root of a number
+  return nums.map(n => parseFloat(Math.sqrt(n).toFixed(2)));
 }
 
 function findSentencesContaining(sentences, str) {
