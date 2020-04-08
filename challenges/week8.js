@@ -35,7 +35,7 @@ const sumArrays = arrs => {
   
   // concats empty array with flattened arrs array.
   // limitation is that this will only work with an array depth of 1
-  const newArr = [].concat(...arrs);
+  const newArr = arrs.flat();
 
   // reduce array method takes 'reducer' function to iterate and output single value
   const reducer = (count, value) => count + value;
