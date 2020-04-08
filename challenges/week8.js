@@ -33,13 +33,13 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   
-  // concats empty array with flattened arrs array.
-  // limitation is that this will only work with an array depth of 1
-  const newArr = arrs.flat();
+  // .flat() array method, flattens sub arrays into single array. Can control flatten depth by passing
+  // depth argument into flat method. ie. .flat(2)
+  //const newArr = arrs.flat();
 
   // reduce array method takes 'reducer' function to iterate and output single value
   const reducer = (count, value) => count + value;
-  return newArr.reduce(reducer);
+  return arrs.flat().reduce(reducer);
 };
 
 const arrShift = arr => {
