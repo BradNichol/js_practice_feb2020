@@ -24,7 +24,10 @@ const count1sand0s = str => {
 
 const reverseNumber = n => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  
+  // cannot use spread operator on numbers, so used template literal to convert to string first
+  // wrapped expression in parseInt to return numbers, exc leading zeros.
+  return parseInt([...`${n}`].reverse().join(''));
 };
 
 const sumArrays = arrs => {
