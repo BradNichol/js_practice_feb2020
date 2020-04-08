@@ -45,10 +45,8 @@ const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   
   if (arr.length > 1) {
-    const firstItem = arr[0];
-    const lastItem = arr[arr.length-1];
-    const middleItems = arr.slice(1, arr.length-1);
-    return [lastItem, ...middleItems, firstItem];
+    // last element, slice from index 1 to last-1, first element
+    return [arr[arr.length-1], ...arr.slice(1, arr.length-1), arr[0]];
   }
   return arr;
 };
