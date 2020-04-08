@@ -32,7 +32,14 @@ const reverseNumber = n => {
 
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
-  // Your code here!
+  
+  // concats empty array with flattened arrs array.
+  // limitation is that this will only work with an array depth of 1
+  const newArr = [].concat(...arrs);
+
+  // reduce array method takes 'reducer' function to iterate and output single value
+  const reducer = (count, value) => count + value;
+  return newArr.reduce(reducer);
 };
 
 const arrShift = arr => {
