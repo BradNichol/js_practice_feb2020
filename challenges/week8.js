@@ -35,7 +35,6 @@ const sumArrays = arrs => {
   
   // .flat() array method, flattens sub arrays into single array. Can control flatten depth by passing
   // depth argument into flat method. ie. .flat(2)
-  //const newArr = arrs.flat();
 
   // reduce array method takes 'reducer' function to iterate and output single value
   const reducer = (count, value) => count + value;
@@ -44,7 +43,14 @@ const sumArrays = arrs => {
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+  
+  if (arr.length > 1) {
+    const firstItem = arr[0];
+    const lastItem = arr[arr.length-1];
+    const middleItems = arr.slice(1, arr.length-1);
+    return [lastItem, ...middleItems, firstItem];
+  }
+  return arr;
 };
 
 const findNeedle = (haystack, searchTerm) => {
