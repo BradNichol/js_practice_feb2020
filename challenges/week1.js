@@ -57,12 +57,8 @@ function reverseWord(word) {
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
 
-  let newArray = [];
-  words.forEach((w) => {
-    newArray.push(w.split("").reverse().join(""));
-  });
-
-  return newArray;
+  // refactored from using forEach to map, as map returns an array.
+  return words.map(word => word.split('').reverse().join(''));
 }
 
 
