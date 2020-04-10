@@ -50,12 +50,10 @@ function findSentencesContaining(sentences, str) {
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   
-  arr = [];
-  triangles.forEach(t => {
-    // use spread operator to convert individual array into variables 
-    arr.push(Math.max(...t));
-  })
-  return arr;
+  // refactored from using forEach + push to map.  arr = [];
+  // use spread operator to convert individual array into variables 
+  return triangles.map(t => Math.max(...t));
+ 
 }
 
 module.exports = {
