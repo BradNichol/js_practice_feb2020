@@ -43,9 +43,7 @@ const getComplementaryDNA = str => {
 
   const dnaPairs = {T: 'A', A: 'T', C: 'G', G: 'C'};
 
-  const strToArr = str.split('').map(l => l = dnaPairs[l]);
-
-  return strToArr.join('');
+  return str.split('').map(l => l = dnaPairs[l]).join('');
 };
 
 /**
