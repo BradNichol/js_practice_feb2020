@@ -25,6 +25,7 @@ const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
 
   // regular expression compares string against certain char only.
+  // i at the end ignores case sensitivity 
   const regex = RegExp(/^[CGTA]*$/i);
   // .test() regexp method test against the regex and returns boolean.
   return regex.test(str);
