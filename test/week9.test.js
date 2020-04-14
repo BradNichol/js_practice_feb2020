@@ -34,3 +34,13 @@ describe("isValidDNA", () => {
     expect(isValidDNA('CgTTTttAAAaa')).toBe(true);
   });
 });
+
+describe("getComplementaryDNA", () => {
+  test("return complimentary DNA base pair. ACTG should return TGAC", () => {
+    expect(getComplementaryDNA('ACTG')).toBe('TGAC');
+  });
+
+  test("return complimentary DNA base pair. GTCA should return CAGT", () => {
+    expect(getComplementaryDNA('GTCA')).toBe('CAGT');
+  });
+});
