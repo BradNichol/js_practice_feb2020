@@ -20,3 +20,9 @@ describe("sumMultiples", () => {
     expect(sumMultiples([1, 3.1, 5.2, 5.0, 10])).toBe(15);
   });
 });
+
+describe("isValidDNA", () => {
+  test("return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.", () => {
+    expect(isValidDNA('CGTA')).toBe(true);
+  });
+});
