@@ -22,7 +22,11 @@ describe("sumMultiples", () => {
 });
 
 describe("isValidDNA", () => {
-  test("return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.", () => {
+  test("return true. A valid DNA string may contain characters C, G, T or A only.", () => {
     expect(isValidDNA('CGTA')).toBe(true);
+  });
+
+  test("return false. A valid DNA string may contain characters C, G, T or A only.", () => {
+    expect(isValidDNA('CGTABBBB')).toBe(false);
   });
 });
