@@ -29,4 +29,8 @@ describe("isValidDNA", () => {
   test("return false. A valid DNA string may contain characters C, G, T or A only.", () => {
     expect(isValidDNA('CGTABBBB')).toBe(false);
   });
+
+  test("Ignore character case", () => {
+    expect(isValidDNA('CgTTTttAAAaa')).toBe(true);
+  });
 });
