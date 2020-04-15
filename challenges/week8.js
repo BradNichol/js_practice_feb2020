@@ -70,7 +70,8 @@ const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   
   // Split string into array
-  const strToArr = str.toLowerCase().split(' ');
+  // use replace with regex statement to only return char a-z
+  const strToArr = str.replace(/[^a-zA-Z ]/g, "").toLowerCase().split(' ');
   
   //initialise empty object
   let frequencyObj = {};
