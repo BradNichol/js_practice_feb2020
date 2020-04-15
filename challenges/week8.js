@@ -70,7 +70,7 @@ const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   
   // Split string into array
-  const strToArr = str.split(' ');
+  const strToArr = str.toLowerCase().split(' ');
   
   //initialise empty object
   let frequencyObj = {};
