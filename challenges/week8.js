@@ -75,19 +75,13 @@ const getWordFrequencies = str => {
   //initialise empty object
   let frequencyObj = {};
 
-  // initialise counter
-  let counter = 0;
   strToArr.forEach(i => {
-    // get each word in array
-    let word = strToArr[counter];
-    // increase counter for next word
-    counter++
     // if word is not in object, set word key with value of 1
-    if (!frequencyObj[word]) {
-      frequencyObj[word] = 1;
+    if (!frequencyObj[i]) {
+      frequencyObj[i] = 1;
     // if word key is present, just increase value by 1
     } else {
-      frequencyObj[word]++;
+      frequencyObj[i]++;
     }
   });
 
