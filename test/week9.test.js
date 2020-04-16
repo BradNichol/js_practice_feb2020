@@ -44,3 +44,17 @@ describe("getComplementaryDNA", () => {
     expect(getComplementaryDNA('GTCA')).toBe('CAGT');
   });
 });
+
+describe("isItPrime", () => {
+  test("return true if n is a prime number.", () => {
+    expect(isItPrime(7)).toBe(true);
+    expect(isItPrime(11)).toBe(true);
+    expect(isItPrime(17)).toBe(true);
+  });
+
+  test("return false if n is not a prime number", () => {
+    expect(isItPrime(1)).toBe(false);
+    expect(isItPrime(4)).toBe(false);
+    expect(isItPrime(10)).toBe(false);
+  });
+});
