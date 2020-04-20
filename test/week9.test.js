@@ -59,4 +59,10 @@ describe("isItPrime", () => {
     expect(isItPrime(9)).toBe(false);
     expect(isItPrime(10)).toBe(false);
   });
+
+  test("return false if n is not positive integer", () => {
+    expect(isItPrime(-1)).toBe(false);
+    expect(isItPrime(-4)).toBe(false);
+  });
 });
+
