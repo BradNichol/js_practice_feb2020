@@ -55,6 +55,8 @@ describe("isItPrime", () => {
   test("return false if n is not a prime number", () => {
     expect(isItPrime(1)).toBe(false);
     expect(isItPrime(4)).toBe(false);
+    expect(isItPrime(8)).toBe(false);
+    expect(isItPrime(9)).toBe(false);
     expect(isItPrime(10)).toBe(false);
   });
 });
