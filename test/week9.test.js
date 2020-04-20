@@ -66,3 +66,14 @@ describe("isItPrime", () => {
   });
 });
 
+
+describe("createMatrix", () => {
+  test("receive a number and return an array of n arrays", () => {
+    expect(createMatrix(3, "Foo")).toEqual([
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"]
+      ]);
+  });
+});
+
