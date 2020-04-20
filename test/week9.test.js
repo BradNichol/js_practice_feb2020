@@ -69,10 +69,16 @@ describe("isItPrime", () => {
 
 describe("createMatrix", () => {
   test("receive a number and return an array of n arrays", () => {
-    expect(createMatrix(3, "Foo")).toEqual([
+    expect(createMatrix(3, "foo")).toEqual([
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"]
+      ]);
+    expect(createMatrix(4, "Brad")).toEqual([
+      ["Brad", "Brad", "Brad", "Brad"],
+      ["Brad", "Brad", "Brad", "Brad"],
+      ["Brad", "Brad", "Brad", "Brad"],
+      ["Brad", "Brad", "Brad", "Brad"]
       ]);
   });
 });
