@@ -54,10 +54,20 @@ const getComplementaryDNA = str => {
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
 
-  if (n < 2 || n % 2 === 0) return false;
+  // catches 1 and negative values
+  if (n < 2) return false;
+
+  /*Using trial by division.
+  Most primes above 2 are odd
+  Only need to check up to sqr root of n.
+    
+  */
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false
+  }
 
   return true;
-}
+};
 
 /**
  * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
