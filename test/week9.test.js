@@ -23,25 +23,25 @@ describe("sumMultiples", () => {
 
 describe("isValidDNA", () => {
   test("return true. A valid DNA string may contain characters C, G, T or A only.", () => {
-    expect(isValidDNA('CGTA')).toBe(true);
+    expect(isValidDNA("CGTA")).toBe(true);
   });
 
   test("return false. A valid DNA string may contain characters C, G, T or A only.", () => {
-    expect(isValidDNA('CGTABBBB')).toBe(false);
+    expect(isValidDNA("CGTABBBB")).toBe(false);
   });
 
   test("Ignore character case", () => {
-    expect(isValidDNA('CgTTTttAAAaa')).toBe(true);
+    expect(isValidDNA("CgTTTttAAAaa")).toBe(true);
   });
 });
 
 describe("getComplementaryDNA", () => {
   test("return complimentary DNA base pair. ACTG should return TGAC", () => {
-    expect(getComplementaryDNA('ACTG')).toBe('TGAC');
+    expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
 
   test("return complimentary DNA base pair. GTCA should return CAGT", () => {
-    expect(getComplementaryDNA('GTCA')).toBe('CAGT');
+    expect(getComplementaryDNA("GTCA")).toBe("CAGT");
   });
 });
 
@@ -66,20 +66,31 @@ describe("isItPrime", () => {
   });
 });
 
-
 describe("createMatrix", () => {
   test("receive a number and return an array of n arrays", () => {
     expect(createMatrix(3, "foo")).toEqual([
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"],
-      ["foo", "foo", "foo"]
-      ]);
+      ["foo", "foo", "foo"],
+    ]);
     expect(createMatrix(4, "Brad")).toEqual([
       ["Brad", "Brad", "Brad", "Brad"],
       ["Brad", "Brad", "Brad", "Brad"],
       ["Brad", "Brad", "Brad", "Brad"],
-      ["Brad", "Brad", "Brad", "Brad"]
-      ]);
+      ["Brad", "Brad", "Brad", "Brad"],
+    ]);
   });
 });
 
+describe("areWeCovered", () => {
+  test("function should return true depending on whether there are enough staff scheduled for the given day.", () => {
+    expect(
+      areWeCovered([
+        { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+        { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+        { name: "Brad", rota: ["Monday", "Sunday", "Friday", "Wednesday"] },
+        { name: "Joanne", rota: ["Monday", "Wednesday"] },
+      ]).toEqual(true)
+    );
+  });
+});
