@@ -92,4 +92,13 @@ describe("areWeCovered", () => {
         { name: "Joanne", rota: ["Monday", "Wednesday"] },
       ], 'Monday')).toBe(true)
   });
+  test("function should return false depending on whether there are enough staff scheduled for the given day.", () => {
+    expect(
+      areWeCovered([
+        { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+        { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+        { name: "Brad", rota: ["Monday", "Sunday", "Friday", "Wednesday"] },
+        { name: "Joanne", rota: ["Monday", "Wednesday"] },
+      ], 'Tuesday')).toBe(false)
+  });
 });
