@@ -111,6 +111,13 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+
+  let staffCount = 0; 
+  staff.forEach((e) => {
+    if (e.rota.includes(day)) staffCount++;
+  });
+
+  return staffCount >= 3;
 };
 
 module.exports = {
