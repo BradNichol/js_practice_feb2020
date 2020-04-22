@@ -90,7 +90,6 @@ describe("areWeCovered", () => {
         { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
         { name: "Brad", rota: ["Monday", "Sunday", "Friday", "Wednesday"] },
         { name: "Joanne", rota: ["Monday", "Wednesday"] },
-      ]).toEqual(true)
-    );
+      ], 'Monday')).toBe(true)
   });
 });
