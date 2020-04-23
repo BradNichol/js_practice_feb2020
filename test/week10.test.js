@@ -3,7 +3,7 @@ const {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
-  findWinner
+  findWinner,
 } = require("../challenges/week10");
 
 describe("sumDigits", () => {
@@ -22,8 +22,72 @@ describe("createRange", () => {
   });
 
   test("Uses 1 as default step, if step not provided", () => {
-    expect(createRange(13, 25)).toEqual([13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
+    expect(createRange(13, 25)).toEqual([
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+    ]);
   });
 });
 
-
+describe("getScreentimeAlertList", () => {
+  test("Uses a start and end numbers to a range of numbers in an array.", () => {
+    expect(
+      getScreentimeAlertList(
+        [
+          {
+            username: "beth_1234",
+            name: "Beth Smith",
+            screenTime: [
+              {
+                date: "2019-05-01",
+                usage: { twitter: 34, instagram: 22, facebook: 40 },
+              },
+              {
+                date: "2019-05-02",
+                usage: { twitter: 56, instagram: 40, facebook: 31 },
+              },
+              {
+                date: "2019-05-03",
+                usage: { twitter: 12, instagram: 15, facebook: 19 },
+              },
+              {
+                date: "2019-05-04",
+                usage: { twitter: 10, instagram: 56, facebook: 61 },
+              },
+            ],
+          },
+          {
+            username: "sam_j_1989",
+            name: "Sam Jones",
+            screenTime: [
+              {
+                date: "2019-06-11",
+                usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 10 },
+              },
+              {
+                date: "2019-06-13",
+                usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 16 },
+              },
+              {
+                date: "2019-06-14",
+                usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 },
+              },
+            ],
+          },
+        ],
+        "2019-05-04"
+      )
+    ).toEqual(["beth_1234"]);
+  });
+});
