@@ -41,7 +41,7 @@ describe("createRange", () => {
 });
 
 describe("getScreentimeAlertList", () => {
-  test("Uses a start and end numbers to a range of numbers in an array.", () => {
+  test("Returns the username in an array if screentime is above 100 minutues.", () => {
     expect(
       getScreentimeAlertList(
         [
