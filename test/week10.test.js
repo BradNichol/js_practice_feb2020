@@ -20,6 +20,10 @@ describe("createRange", () => {
   test("Uses a start and end numbers to create range of numbers in array. Also uses a step number to provide gap between number sequence.", () => {
     expect(createRange(3, 11, 2)).toEqual([3, 5, 7, 9, 11]);
   });
+
+  test("Uses 1 as default step, if step not provided", () => {
+    expect(createRange(13, 25)).toEqual([13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
+  });
 });
 
 
