@@ -18,7 +18,7 @@ describe("createRange", () => {
   });
 
   test("Uses a start and end numbers to create range of numbers in array. Also uses a step number to provide gap between number sequence.", () => {
-    expect(createRange(3, 11)).toEqual([3, 5, 7, 9, 11]);
+    expect(createRange(3, 11, 2)).toEqual([3, 5, 7, 9, 11]);
   });
 });
 
