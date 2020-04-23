@@ -2,7 +2,7 @@
  * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
  * @param {Number} n
  */
-const sumDigits = n => {
+const sumDigits = (n) => {
   if (n === undefined) throw new Error("n is required");
 
   // create new array with numbers at each index
@@ -25,7 +25,7 @@ const createRange = (start, end, step) => {
   if (end === undefined) throw new Error("end is required");
 
   let arr = [];
-  for (let i = start; i <= end; step ? i+=step : i++) {
+  for (let i = start; i <= end; step ? (i += step) : i++) {
     arr.push(i);
   }
   return arr;
@@ -60,10 +60,10 @@ const createRange = (start, end, step) => {
  * For example, if passed the above users and the date "2019-05-04" the function should return ["beth_1234"] as she used over 100 minutes of screentime on that date.
  * @param {Array} users
  */
-  const getScreentimeAlertList = (users, date) => {
-    if (users === undefined) throw new Error("users is required");
-    if (date === undefined) throw new Error("date is required");
-  };
+const getScreentimeAlertList = (users, date) => {
+  if (users === undefined) throw new Error("users is required");
+  if (date === undefined) throw new Error("date is required");
+};
 
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
@@ -75,7 +75,7 @@ const createRange = (start, end, step) => {
  * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
  * @param {String} str
  */
-const hexToRGB = hexStr => {
+const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
 };
 
@@ -89,7 +89,7 @@ const hexToRGB = hexStr => {
  * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
  * @param {Array} board
  */
-const findWinner = board => {
+const findWinner = (board) => {
   if (board === undefined) throw new Error("board is required");
 };
 
@@ -98,5 +98,5 @@ module.exports = {
   createRange,
   getScreentimeAlertList,
   hexToRGB,
-  findWinner
+  findWinner,
 };
