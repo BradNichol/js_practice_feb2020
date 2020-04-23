@@ -30,7 +30,7 @@ const createRange = (start, end, step) => {
   for (let i = start; i <= end; step ? i+=step : i++) {
     arr.push(i);
   }
-  return arr
+  return arr;
 };
 
 /**
