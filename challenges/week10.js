@@ -4,6 +4,14 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+
+  // convert number to string, to use split method into array
+  const arr = Array.from(String(n), Number);
+
+  // use reducer function to output single value
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  return arr.reduce(reducer);
 };
 
 /**
