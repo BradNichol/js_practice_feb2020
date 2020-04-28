@@ -89,13 +89,14 @@ const getScreentimeAlertList = (users, date) => {
 const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
 
-  // remove hash sign from sting
+  // return array using slice to remove # and regex with match() to split values every two
+  const hexArr = hexStr.slice(1).match(/.{1,2}/g);
 
-  // chunk hex values into sub arrays of two
+  // loop through arr with parseInt(subarr, 16) to return base 16 number
+  const convertArr = hexArr.map(e => parseInt(e, 16));
 
-  // loop each sub array through parseInt(subarr, 16) to return base 16 number
-
-  // return rgb string with base 16 values. Maybe string literals i.e. rgb(subarr1, subarr2, subarr3)
+  // return rgb string with base 16 values, using string literals i.e. rgb(array)
+  return `rgb(${convertArr})`;
 };
 
 /**
