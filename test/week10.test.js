@@ -91,3 +91,10 @@ describe("getScreentimeAlertList", () => {
     ).toEqual(["beth_1234"]);
   });
 });
+
+describe("hexToRGB", () => {
+  test("Convert hex value to RGB", () => {
+    expect(hexToRGB('#FF1133')).toBe('rgb(255,17,51)');
+    expect(hexToRGB('#51FDFD')).toBe('rgb(81,253,253)');
+  });
+});
