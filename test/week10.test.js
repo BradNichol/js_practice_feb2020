@@ -127,4 +127,13 @@ describe("findWinner", () => {
       ])
     ).toBe("X");
   });
+  test("Return null if currently no winner'", () => {
+    expect(
+      findWinner([
+        ["0","0", null],
+        ["X",null, "X"],
+        ["0", null , null],
+      ])
+    ).toBe(null);
+  });
 });
