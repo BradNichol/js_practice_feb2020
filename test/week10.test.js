@@ -100,13 +100,22 @@ describe("hexToRGB", () => {
 });
 
 describe("findWinner", () => {
-  test("X Has won, so return 'X'", () => {
+  test("Check for horizontal win. X Has won, so return 'X'", () => {
     expect(
       findWinner([
-        ['X', "0", null],
-        ['X', null, "0"],
+        ["X", "0", null],
+        ["X", null, "0"],
         ["X", null, "0"],
       ])
     ).toBe("X");
+  });
+  test("Check for diagonal win. 0 Has won, so return '0'", () => {
+    expect(
+      findWinner([
+        ["0","X", "X"],
+        [null, "0" , null],
+        [null,null , "0"],
+      ])
+    ).toBe("0");
   });
 });
