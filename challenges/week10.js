@@ -92,8 +92,11 @@ const hexToRGB = (hexStr) => {
   // return array using slice to remove # and regex with match() to split values every two
   // loop through arr with parseInt(subarr, 16) to return base 16 number
   // return rgb string with base 16 values, using string literals i.e. rgb(array)
-  
-  const hexArr = hexStr.slice(1).match(/.{1,2}/g).map(e => parseInt(e, 16));
+
+  const hexArr = hexStr
+    .slice(1)
+    .match(/.{1,2}/g)
+    .map((e) => parseInt(e, 16));
   return `rgb(${hexArr})`;
 };
 
