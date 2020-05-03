@@ -94,7 +94,19 @@ describe("getScreentimeAlertList", () => {
 
 describe("hexToRGB", () => {
   test("Convert hex value to RGB", () => {
-    expect(hexToRGB('#FF1133')).toBe('rgb(255,17,51)');
-    expect(hexToRGB('#51FDFD')).toBe('rgb(81,253,253)');
+    expect(hexToRGB("#FF1133")).toBe("rgb(255,17,51)");
+    expect(hexToRGB("#51FDFD")).toBe("rgb(81,253,253)");
+  });
+});
+
+describe("findWinner", () => {
+  test("X Has won, so return 'X'", () => {
+    expect(
+      findWinner([
+        ['X', "0", null],
+        ['X', null, "0"],
+        ["X", null, "0"],
+      ])
+    ).toBe("X");
   });
 });
