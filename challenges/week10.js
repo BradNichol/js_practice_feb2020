@@ -112,6 +112,26 @@ const hexToRGB = (hexStr) => {
  */
 const findWinner = (board) => {
   if (board === undefined) throw new Error("board is required");
+
+
+  // function returns the winner from vertical / diagonal wins.
+  const verticalDiagonalCheck = () => {
+    const items = ["X", "0"];
+
+    // gets the length of unique arrays from item index values
+    const count = items.map((item) => {
+      return [...new Set(board.map((line) => line.indexOf(item)))].length;
+    });
+
+    // if array (count) length === 1, vertical win, else length === 3 diagonal win
+    for (let i = 0; i < count.length; i++) {
+      if (count[i] === 1 || count[i] === 3) {
+        return count.indexOf(count[i]) === 0 ? "X" : "0";
+      }
+    }
+  };
+
+  return verticalDiagonalCheck();
 };
 
 module.exports = {
