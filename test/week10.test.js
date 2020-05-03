@@ -118,4 +118,13 @@ describe("findWinner", () => {
       ])
     ).toBe("0");
   });
+  test("Check for horizontal win. X Has won, so return 'X'", () => {
+    expect(
+      findWinner([
+        ["0","0", null],
+        ["X","X", "X"],
+        ["0", null , null],
+      ])
+    ).toBe("X");
+  });
 });
