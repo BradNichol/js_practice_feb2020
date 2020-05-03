@@ -140,8 +140,9 @@ const findWinner = (board) => {
           return count.indexOf(count[i]) === 0 ? "X" : "0";
         }
       }
+      return null
     };
-
+    
     return verticalDiagonalCheck();
   }
 };
